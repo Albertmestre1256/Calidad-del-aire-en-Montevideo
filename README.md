@@ -21,12 +21,12 @@ Se optó por continuar con Ozono (O3), que presenta ~17% de nulos distribuidos d
 
 ## Estado del proyecto
 
-- [x] **Día 1 — Setup y descarga de datos.** Conexión a la API de CKAN, descarga y concatenación de los 9 recursos trimestrales de O3.
-- [x] **Día 2 — Limpieza y preparación.** Eliminación de nulos en la columna `o3` (17.05% del total, documentado y justificado), verificación de que la limpieza no introdujo sesgo relevante entre estaciones (pérdida de 15.67% en Curva de Maroñas vs. 18.85% en Colón), y creación de columnas derivadas: `dia_semana`, `tipo_dia` (día de semana / fin de semana) y `hora_de_la_muestra`.
-- [ ] **Día 3 — Estadística descriptiva.** Media, mediana, desvío estándar por estación y por tipo de día; visualizaciones (boxplots, histograma, serie temporal). *En curso.*
-- [ ] **Día 4 — Estadística inferencial.** Test de normalidad, comparación entre estaciones y entre tipo de día (t-test o Mann-Whitney según corresponda), intervalo de confianza del 95%.
-- [ ] **Día 5 — Redacción del reporte final** dentro del notebook (metodología, resultados, limitaciones).
-- [ ] **Día 6 — Revisión crítica** de la metodología y las conclusiones.
+- [x] ** — Setup y descarga de datos.** Conexión a la API de CKAN, descarga y concatenación de los 9 recursos trimestrales de O3.
+- [x] ** — Limpieza y preparación.** Eliminación de nulos en la columna `o3` (17.05% del total, documentado y justificado), verificación de que la limpieza no introdujo sesgo relevante entre estaciones (pérdida de 15.67% en Curva de Maroñas vs. 18.85% en Colón), y creación de columnas derivadas: `dia_semana`, `tipo_dia` (día de semana / fin de semana) y `hora_de_la_muestra`.
+- [ ] ** — Estadística descriptiva.** Media, mediana, desvío estándar por estación y por tipo de día; visualizaciones (boxplots, histograma, serie temporal). *En curso.*
+- [ ] ** — Estadística inferencial.** Test de normalidad, comparación entre estaciones y entre tipo de día (t-test o Mann-Whitney según corresponda), intervalo de confianza del 95%.
+- [ ] ** — Redacción del reporte final** dentro del notebook (metodología, resultados, limitaciones).
+- [ ] ** — Revisión crítica** de la metodología y las conclusiones.
 
 ## Contenido del repositorio
 

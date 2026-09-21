@@ -10,23 +10,23 @@ Análisis exploratorio e inferencial sobre los niveles de Ozono (O3) en Montevid
 
 Portal de Datos Abiertos de la Intendencia de Montevideo (CKAN), dataset de Ozono (O3) de la Red de Monitoreo de Calidad del Aire, gestionada por el Servicio de Evaluación de la Calidad y Control Ambiental (SECCA).
 
-* Dataset: https://ckan.montevideo.gub.uy/dataset/calidad-del-aire-ozono-o3
-* Acceso vía API pública de CKAN (`package\_show`), con concatenación de los 9 recursos trimestrales disponibles (2024-2026).
+- Dataset: https://ckan.montevideo.gub.uy/dataset/calidad-del-aire-ozono-o3
+- Acceso vía API pública de CKAN (`package_show`), con concatenación de los 9 recursos trimestrales disponibles (2024-2026).
 
 ### Decisión metodológica: por qué O3 y no NO2
 
-El análisis comenzó con el dataset de Dióxido de Nitrógeno (NO2), pero se descartó tras auditar la calidad de los datos: \~70% de los valores estaban vacíos, distribuidos en **bloques trimestrales completos** (varios trimestres al 100% de nulos), un patrón compatible con un problema de publicación del dataset más que con fallas normales de sensor. Se envió una consulta a `datosabiertos@imm.gub.uy` para confirmar la causa (respuesta pendiente al momento de este análisis).
+El análisis comenzó con el dataset de Dióxido de Nitrógeno (NO2), pero se descartó tras auditar la calidad de los datos: ~70% de los valores estaban vacíos, distribuidos en **bloques trimestrales completos** (varios trimestres al 100% de nulos), un patrón compatible con un problema de publicación del dataset más que con fallas normales de sensor. Se envió una consulta a `datosabiertos@imm.gub.uy` para confirmar la causa (respuesta pendiente al momento de este análisis).
 
-Se optó por continuar con Ozono (O3), que presenta \~17% de nulos distribuidos de forma gradual por trimestre (entre 1.6% y 39.5%, sin bloques en 0% o 100%), consistente con interrupciones normales de sensor.
+Se optó por continuar con Ozono (O3), que presenta ~17% de nulos distribuidos de forma gradual por trimestre (entre 1.6% y 39.5%, sin bloques en 0% o 100%), consistente con interrupciones normales de sensor.
 
 ## Estado del proyecto
 
-* \[x] **— Setup y descarga de datos.** Conexión a la API de CKAN, descarga y concatenación de los 9 recursos trimestrales de O3.
-* \[x] **— Limpieza y preparación.** Eliminación de nulos en la columna `o3` (17.05% del total, documentado y justificado), verificación de que la limpieza no introdujo sesgo relevante entre estaciones (pérdida de 15.67% en Curva de Maroñas vs. 18.85% en Colón), y creación de columnas derivadas: `dia\_semana`, `tipo\_dia` (día de semana / fin de semana) y `hora\_de\_la\_muestra`.
-* \[ ] **— Estadística descriptiva.** Media, mediana, desvío estándar por estación y por tipo de día; visualizaciones (boxplots, histograma, serie temporal). *En curso.*
-* \[ ] **— Estadística inferencial.** Test de normalidad, comparación entre estaciones y entre tipo de día (t-test o Mann-Whitney según corresponda), intervalo de confianza del 95%.
-* \[ ]**— Redacción del reporte final** dentro del notebook (metodología, resultados, limitaciones).
-* \[ ]**— Revisión crítica** de la metodología y las conclusiones.
+- [x] **Día 1 — Setup y descarga de datos.** Conexión a la API de CKAN, descarga y concatenación de los 9 recursos trimestrales de O3.
+- [x] **Día 2 — Limpieza y preparación.** Eliminación de nulos en la columna `o3` (17.05% del total, documentado y justificado), verificación de que la limpieza no introdujo sesgo relevante entre estaciones (pérdida de 15.67% en Curva de Maroñas vs. 18.85% en Colón), y creación de columnas derivadas: `dia_semana`, `tipo_dia` (día de semana / fin de semana) y `hora_de_la_muestra`.
+- [ ] **Día 3 — Estadística descriptiva.** Media, mediana, desvío estándar por estación y por tipo de día; visualizaciones (boxplots, histograma, serie temporal). *En curso.*
+- [ ] **Día 4 — Estadística inferencial.** Test de normalidad, comparación entre estaciones y entre tipo de día (t-test o Mann-Whitney según corresponda), intervalo de confianza del 95%.
+- [ ] **Día 5 — Redacción del reporte final** dentro del notebook (metodología, resultados, limitaciones).
+- [ ] **Día 6 — Revisión crítica** de la metodología y las conclusiones.
 
 ## Contenido del repositorio
 
@@ -36,7 +36,7 @@ Se optó por continuar con Ozono (O3), que presenta \~17% de nulos distribuidos 
 └── .gitignore
 ```
 
-**Nota:** el dataset ya limpio (`Dataset\_O3\_listo.csv`) no está versionado en este repositorio por exceder el límite de tamaño de archivo de GitHub (211 MB). Se puede regenerar ejecutando el notebook de punta a punta, ya que el código de descarga y limpieza está completo y documentado.
+**Nota:** el dataset ya limpio (`Dataset_O3_listo.csv`) no está versionado en este repositorio por exceder el límite de tamaño de archivo de GitHub (211 MB). Se puede regenerar ejecutando el notebook de punta a punta, ya que el código de descarga y limpieza está completo y documentado.
 
 ## Cómo reproducir el análisis
 
@@ -47,4 +47,3 @@ Se optó por continuar con Ozono (O3), que presenta \~17% de nulos distribuidos 
 ## Herramientas
 
 Python, pandas, requests (consumo de API REST), matplotlib/seaborn (visualización), scipy (estadística inferencial).
-

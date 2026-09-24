@@ -57,7 +57,6 @@ Los gráficos de perfil mensual muestran promedios, que por diseño diluyen los 
 ```
 ├── O3.ipynb              # Notebook principal: descarga, limpieza, EDA, análisis
 ├── Datasets/              # CSVs crudos descargados del portal (9 trimestres, 2024-2026)
-└── .gitignore
 ```
 
 **Nota:** el dataset ya limpio (`Dataset_O3_listo.csv`) no está versionado en este repositorio por exceder el límite de tamaño de archivo de GitHub (211 MB). Se puede regenerar ejecutando el notebook de punta a punta, ya que el código de descarga y limpieza está completo y documentado.

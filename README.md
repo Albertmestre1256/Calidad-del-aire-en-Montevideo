@@ -2,6 +2,20 @@
 
 Análisis exploratorio e inferencial sobre los niveles de Ozono (O3) en Montevideo, utilizando datos abiertos publicados por la Intendencia de Montevideo. Proyecto personal, realizado como parte de un proceso de fortalecimiento de base cuantitativa en ciencia de datos.
 
+> ⚠️ **Proyecto discontinuado (24/09/2026) — ver aclaración abajo.** El análisis continúa con el parámetro PM2.5, usando una fuente de datos validada, en un repositorio nuevo: *(pendiente agregar link cuando exista)*.
+
+## Por qué se discontinuó este análisis
+
+Consultada por segunda vez la Unidad Calidad de Aire (SECCA, Intendencia de Montevideo), el Ing. Quím. Pablo Franco informó dos hallazgos que exceden lo que puede tratarse como una limitación menor documentable:
+
+1. **Los porcentajes reales de datos válidos son mucho más bajos de lo estimado inicialmente en este análisis.** Cifras oficiales aportadas por la Unidad: Curva de Maroñas — 77% (2023), 67% (2024), 68% (2025). Colón — 69% (2023), **37% (2024), 25% (2025)**. El ~17% de nulos calculado al inicio de este proyecto solo reflejaba valores vacíos, no la proporción real de mediciones inválidas.
+
+2. **El dataset minutal puede contener datos inválidos mezclados con datos válidos, sin ninguna forma de detectarlo desde el análisis.** Cita textual de la respuesta recibida: *"nosotros no tenemos control sobre los datasets minutales y somos conscientes que en algún caso se cargan datos que nosotros hemos invalidado [...] no sé cuál es la falla informática pero sé que en algunas ocasiones sucede"*.
+
+La Unidad recomendó, por segunda vez y de forma enfática, migrar a los datos horarios de la [Red de Monitoreo de la Calidad del Aire de Montevideo](https://ckan.montevideo.gub.uy/dataset/red-de-monitoreo-de-la-calidad-del-aire-de-montevideo), con más de 10 años de limpieza acumulada, y sugirió trabajar con **PM2.5** en lugar de O3, ya que ese parámetro es calibrado y mantenido directamente por la Unidad (sin tercerización), con mayor fiabilidad del método de medición.
+
+**Se conserva este repositorio íntegro** como evidencia del proceso metodológico — la auditoría de calidad de datos, la verificación con fuentes expertas, y el hallazgo de que el dataset no era confiable para este uso son en sí mismos un resultado válido de la investigación, no un fracaso del análisis.
+
 ## Pregunta de investigación
 
 ¿Existen diferencias estadísticamente significativas en los niveles de O3 entre las dos estaciones de monitoreo disponibles (Colón y Curva de Maroñas), y entre días de semana vs. fines de semana?
@@ -57,6 +71,7 @@ Los gráficos de perfil mensual muestran promedios, que por diseño diluyen los 
 ```
 ├── O3.ipynb              # Notebook principal: descarga, limpieza, EDA, análisis
 ├── Datasets/              # CSVs crudos descargados del portal (9 trimestres, 2024-2026)
+└── .gitignore
 ```
 
 **Nota:** el dataset ya limpio (`Dataset_O3_listo.csv`) no está versionado en este repositorio por exceder el límite de tamaño de archivo de GitHub (211 MB). Se puede regenerar ejecutando el notebook de punta a punta, ya que el código de descarga y limpieza está completo y documentado.

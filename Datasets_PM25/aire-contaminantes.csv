@@ -1,0 +1,8 @@
+CONTAMINANTE,EXPLICACION
+PM2,Material particulado menor de 2.5 micras de diametro
+PM10,Material particulado menor de 10 micras de diametro
+HN,Humo Negro (black smoke)
+PTS,Material particulado total
+SO2,Dioxido de azufre
+NO2,Dioxido de nitrogeno
+O3,Ozono

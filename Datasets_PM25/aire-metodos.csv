@@ -1,0 +1,11 @@
+METODO,EXPLICACION
+UYMVD_PM2_b,Medida de material particulado menor de 2.5 micras de diametro (PM2.5) utilizando Nefelometria como principio de deteccion
+UYMVD_PM2_D,Medida de material particulado menor de 2.5 micras de diametro (PM2.5) utilizando  Un equipo dicotomico para recoleccion de muestra 
+UYMVD_PM10_2,Medida de material particulado menor de 10 micras de diametro (PM10) utilizando Nefelometria como principio de deteccion
+UYMVD_PM10_D,Medida de material particulado menor de 10 micras de diametro (PM10) utilizando  equipo dicotomico de bajo volumen para recoleccion de muestra 
+UYMVD_PM10_H,Medida de PM10 utilizando un  equipo de alto volumen para recoleccion de muestra 
+UYMVD_PTS,Medida de material particulado total (PTS) utilizando un  equipo de alto volumen para recoleccion de muestra 
+UYMVD_SO2_T,Medida de dioxido de azufre (SO2) en tren de monitoreo y posterior analisis con cromatografia ionica  
+UYMVD_NO2_2,"Medida de dioxido de nitrogeno (NO2),  semiconductor sensible al gas"
+UYMVD_HN,Medida de Humo Negro (black smoke) utilizando reflectometria como principio de deteccion
+UYMVD_O3,Medida de ozono  (O3)  semiconductor sensible al gas

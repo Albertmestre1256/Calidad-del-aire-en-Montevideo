@@ -7,7 +7,7 @@ Proyecto personal de estadística aplicada, usando datos abiertos de la Intenden
 Este proyecto cambió de contaminante dos veces, cada vez por hallazgos de calidad de datos confirmados con la propia Intendencia de Montevideo — no por decisión arbitraria. Resumen breve:
 
 1. **NO2** → descartado: ~70% de valores faltantes, en bloques trimestrales completos.
-2. **O3** → descartado: consultada la Unidad Calidad de Aire (SECCA/IMM), se confirmó que el dataset minutal puede contener datos inválidos mezclados con válidos sin ninguna señal detectable, y que los porcentajes reales de datos válidos eran mucho más bajos de lo estimado (hasta 25% en una estación). Ver [Calidad-del-aire-en-Montevideo/Proyecto/O3/README_O3.md](Proyecto/O3/README.md) para el detalle completo.
+2. **O3** → descartado: consultada la Unidad Calidad de Aire (SECCA/IMM), se confirmó que el dataset minutal puede contener datos inválidos mezclados con válidos sin ninguna señal detectable, y que los porcentajes reales de datos válidos eran mucho más bajos de lo estimado (hasta 25% en una estación). Ver [Calidad-del-aire-en-Montevideo/Proyecto/O3/README_O3.md](/Proyecto/O3/README_O3.md) para el detalle completo.
 3. **PM2.5** → proyecto actual. Se migró al dataset horario de la Red de Monitoreo, recomendado por la propia Intendencia por tener más de 10 años de limpieza validada, y a PM2.5 por ser un parámetro calibrado y mantenido directamente por la Unidad, sin tercerización. Ver [Proyecto/Proyecto - PM2.5/README.md](Proyecto/PM2.5/README.md) para el estado actual.
 
 ## Avance actual (PM2.5)

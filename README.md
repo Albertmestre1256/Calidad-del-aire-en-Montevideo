@@ -12,11 +12,13 @@ Este proyecto cambió de contaminante dos veces, cada vez por hallazgos de calid
 
 ## Avance actual (PM2.5)
 
-- **Adquisición de datos completa:** 243.184 filas de PM2.5 descargadas (2015-2025). Dataset de trabajo final, tras limpieza: **4 estaciones** (Ciudad Vieja 2, Ciudad Vieja 3, Curva de Maronas, Tres Cruces 4).
-- **Limpieza completa**, con varios hallazgos de calidad de datos identificados y corregidos: inconsistencia de formato de archivo en el portal (2023-2024 cargados como `.CSV`), nombres de estación inconsistentes entre archivos (corregidos y verificados con las coordenadas geográficas oficiales), y dos estaciones excluidas por aportar muy poco volumen de datos útiles (Tres Cruces 3, con un año completo inválido, y Colón, con solo dos años de vida útil).
-- Se generó un mapa interactivo con la ubicación real de las estaciones, como parte de la verificación de nombres.
-- **Estadística descriptiva completa:** tabla de medidas por estación y tipo de día, histogramas, boxplots por estación (con detalle año a año) y boxplot general combinado. Se detectó un patrón interesante: en algunas estaciones, los niveles de PM2.5 son más altos en días de semana que en fines de semana — lo opuesto al patrón encontrado con O3 —, consistente con que PM2.5 es un contaminante emitido directamente por el tráfico, a diferencia de O3, que se forma por reacción química.
-- Todos los hallazgos de calidad de datos se están reportando a la Unidad Calidad de Aire, como parte del mismo proceso de verificación aplicado a NO2 y O3.
+- **Adquisición de datos completa:** 243.184 filas de PM2.5 descargadas (2015-2025).
+- **Limpieza completa.** Dataset de trabajo final: **3 estaciones** (Ciudad Vieja, Curva de Maroñas y Tres Cruces). La Unidad Calidad de Aire aclaró que un mismo monitor puede cambiar de ubicación física con el tiempo, por lo que el análisis agrupa por estación (`station_id`) y no por ubicación. Solo Colón quedó excluida, por tener datos únicamente en 2017-2018.
+- **Hallazgos de calidad de datos identificados y reportados a la Unidad:** una inconsistencia de formato de archivo en el portal (2023-2024 cargados como `.CSV`), nombres de ubicación inconsistentes entre archivos, 504 horas duplicadas exactas, meses enteros sin mediciones en algunas estaciones, y un error de carga en Colón (valores multiplicados por 1000, confirmado por la Unidad).
+- Se generó un mapa interactivo con la ubicación real de los monitores, como parte de la verificación de nombres.
+- **Estadística descriptiva completa:** tabla de medidas por estación y tipo de día, histogramas, boxplots y evolución mensual por año, con los meses sin datos marcados en los gráficos.
+- **Estadística inferencial en curso.** Sobre promedios diarios: Curva de Maroñas y Tres Cruces registran más PM2.5 que Ciudad Vieja en las cuatro épocas del año, con la mayor diferencia en invierno. Entre días de semana y fines de semana no se detectó diferencia en Ciudad Vieja ni en Tres Cruces, y en Curva de Maroñas el fin de semana es levemente más alto (1,1 µg/m³). Una lectura inicial de los gráficos sugería valores más altos entre semana en Ciudad Vieja; el test no la confirmó y se descartó.
+- Los resultados son orientativos: los datos publicados están redondeados a enteros, días consecutivos se parecen entre sí, y hay consultas pendientes a la Unidad (entre ellas, la zona horaria de las fechas).
 
 Detalle completo en [Proyecto/PM2.5/README_PM25.md](Proyecto/PM2.5/README_PM25.md).
 

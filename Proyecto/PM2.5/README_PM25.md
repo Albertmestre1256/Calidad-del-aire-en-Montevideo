@@ -19,7 +19,7 @@ Dataset "Red de Monitoreo de la Calidad del Aire de Montevideo" (Portal de Datos
 - [x] **Adquisición de datos.** Descarga y filtrado de los 12 archivos anuales del portal, quedándose solo con PM2.5. 243.184 filas iniciales.
 - [x] **Limpieza y preparación.** Ver hallazgos de calidad de datos abajo. Dataset final: **3 estaciones** (Ciudad Vieja, Curva de Maroñas y Tres Cruces).
 - [x] **Estadística descriptiva.** Tabla de medidas por estación y tipo de día, histogramas (escala completa y con zoom), boxplots por estación y evolución mensual por año, con los meses sin datos marcados en los gráficos.
-- [ ] **Estadística inferencial.** En curso. Hecho: comparación entre estaciones (Wilcoxon, por época del año) y día de semana vs. fin de semana (Mann-Whitney). Pendiente: comparar Curva de Maroñas con Tres Cruces entre sí.
+- [x] **Estadística inferencial.** Comparación entre estaciones, de a pares (Wilcoxon, por época del año), y día de semana vs. fin de semana (Mann-Whitney). Los resultados son orientativos; ver limitaciones abajo.
 - [ ] **Redacción del reporte final.**
 - [ ] **Revisión crítica.**
 
@@ -68,16 +68,16 @@ Los tests se hicieron sobre **promedios diarios** y no sobre las mediciones hora
 
 ### Comparación entre estaciones (Wilcoxon, por época del año)
 
-Se compararon Curva de Maroñas y Tres Cruces contra Ciudad Vieja, usando solo los 1.404 días en que las tres estaciones tienen dato válido (17/05/2019 al 28/05/2025), de modo que cada día se compara consigo mismo. Como la diferencia entre estaciones cambia según la época del año, se analizó cada época por separado.
+Se compararon las estaciones de a pares (Curva de Maroñas contra Ciudad Vieja, Tres Cruces contra Ciudad Vieja, y Curva de Maroñas contra Tres Cruces), usando solo los 1.404 días en que las tres estaciones tienen dato válido (17/05/2019 al 28/05/2025), de modo que cada día se compara consigo mismo. Como la diferencia entre estaciones cambia según la época del año, se analizó cada época por separado.
 
-| Época | Maroñas − Ciudad Vieja (mediana) | Tres Cruces − Ciudad Vieja (mediana) |
-|---|---|---|
-| Verano | 1,6 µg/m³ | 1,0 µg/m³ |
-| Otoño | 2,4 µg/m³ | 0,8 µg/m³ |
-| Invierno | 4,7 µg/m³ | 2,8 µg/m³ |
-| Primavera | 2,1 µg/m³ | 1,0 µg/m³ |
+| Época | Maroñas − Ciudad Vieja (mediana) | Tres Cruces − Ciudad Vieja (mediana) | Maroñas − Tres Cruces (mediana) |
+|---|---|---|---|
+| Verano | 1,6 µg/m³ | 1,0 µg/m³ | 0,6 µg/m³ |
+| Otoño | 2,4 µg/m³ | 0,8 µg/m³ | 1,7 µg/m³ |
+| Invierno | 4,7 µg/m³ | 2,8 µg/m³ | 1,8 µg/m³ |
+| Primavera | 2,1 µg/m³ | 1,0 µg/m³ | 0,9 µg/m³ |
 
-Las ocho comparaciones son estadísticamente significativas, incluso con la corrección de Bonferroni. Curva de Maroñas y Tres Cruces registran más PM2.5 que Ciudad Vieja en las cuatro épocas, y la diferencia es mayor en invierno. En el conjunto total, Maroñas superó a Ciudad Vieja en el 80% de los días.
+Las doce comparaciones (tres pares en cuatro épocas) son estadísticamente significativas, incluso con la corrección de Bonferroni (umbral de 0,05 / 12 = 0,0042). El orden es el mismo en las cuatro épocas: Curva de Maroñas registra más PM2.5 que Tres Cruces, y Tres Cruces más que Ciudad Vieja. La diferencia con Ciudad Vieja es mayor en invierno. En el conjunto total, Maroñas superó a Ciudad Vieja en el 80% de los días.
 
 ### Día de semana vs. fin de semana (Mann-Whitney, por estación)
 
